@@ -1,0 +1,238 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0d0d0d;
+  color: #e0e0e0;
+}
+
+/* HEADER */
+.header {
+  background-image: url('https://images.unsplash.com/photo-1591488320449-011701bb6704?w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 340px;
+}
+
+.header-overlay {
+  background: rgba(0,0,0,0.75);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.header-overlay h1 { font-size: 44px; color: #00e5ff; margin-bottom: 8px; }
+.header-overlay p  { font-size: 16px; color: #ccc; margin-bottom: 20px; }
+
+.header-overlay input {
+  width: 50%;
+  min-width: 260px;
+  padding: 10px 16px;
+  font-size: 14px;
+  border: 1px solid #00e5ff;
+  border-radius: 5px;
+  background: rgba(255,255,255,0.07);
+  color: white;
+  outline: none;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #111;
+  border-bottom: 2px solid #00e5ff;
+  display: flex;
+  padding: 0 16px;
+}
+
+.navbar a {
+  color: #ccc;
+  text-decoration: none;
+  padding: 13px 16px;
+  font-size: 14px;
+}
+
+.navbar a:hover { color: #00e5ff; }
+.navbar .cart-link { margin-left: auto; color: #00e5ff; font-weight: bold; }
+
+/* SECTIONS */
+.section { max-width: 1150px; margin: 36px auto; padding: 0 20px; }
+.section h2 { font-size: 20px; color: #00e5ff; border-left: 4px solid #00e5ff; padding-left: 10px; margin-bottom: 18px; }
+
+/* BRAND BUTTONS */
+.brand-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.brand-btn {
+  background: #1a1a1a;
+  border: 1px solid #444;
+  color: #ccc;
+  padding: 9px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.brand-btn:hover, .brand-btn.active { background: #00e5ff; color: #000; border-color: #00e5ff; font-weight: bold; }
+.brand-btn.nvidia:hover, .brand-btn.nvidia.active { background: #76b900; border-color: #76b900; }
+.brand-btn.amd:hover,    .brand-btn.amd.active    { background: #ed1c24; border-color: #ed1c24; color: #fff; }
+.brand-btn.intel:hover,  .brand-btn.intel.active  { background: #0071c5; border-color: #0071c5; color: #fff; }
+
+/* FILTER BAR */
+.filter-bar {
+  background: #141414;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  padding: 12px 36px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #aaa;
+  flex-wrap: wrap;
+}
+
+.filter-bar select {
+  background: #1e1e1e;
+  border: 1px solid #444;
+  color: #e0e0e0;
+  padding: 7px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+#resultMsg { margin-left: auto; font-size: 13px; color: #666; }
+
+/* GPU GRID & CARD */
+.gpu-grid { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 10px; }
+
+.gpu-card {
+  background: #161616;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  width: 230px;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.gpu-card:hover { border-color: #00e5ff; transform: translateY(-4px); }
+.gpu-card img   { width: 100%; height: 150px; object-fit: cover; display: block; }
+
+.gpu-card-body { padding: 12px; }
+
+.brand-tag {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.tag-nvidia { background: #1a3300; color: #76b900; }
+.tag-amd    { background: #330000; color: #ed1c24; }
+.tag-intel  { background: #001a33; color: #4db8ff; }
+
+.cat-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.cat-Budget    { background: #1e2d00; color: #a3d900; }
+.cat-Mid-Range { background: #002233; color: #00b4d8; }
+.cat-High-End  { background: #2d1a00; color: #ff9500; }
+.cat-Flagship  { background: #2d0033; color: #df00ff; }
+
+.gpu-card h3    { font-size: 14px; color: #fff; margin-bottom: 4px; }
+.gpu-card .vram { font-size: 12px; color: #00e5ff; font-weight: bold; margin-bottom: 3px; }
+.gpu-card .specs{ font-size: 12px; color: #777; margin-bottom: 8px; }
+.gpu-card .price{ font-size: 20px; font-weight: bold; color: #fff; margin-bottom: 10px; }
+
+.gpu-card button {
+  width: 100%;
+  background: #00e5ff;
+  color: #000;
+  border: none;
+  padding: 9px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.gpu-card button:hover { background: #00b8cc; }
+
+/* FEATURES */
+.features { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; padding: 44px 20px; }
+
+.feature-box {
+  background: #161616;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  width: 190px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.feature-box:hover { border-color: #00e5ff; }
+.feature-box .ficon{ font-size: 30px; margin-bottom: 10px; }
+.feature-box h3    { font-size: 14px; color: #fff; margin-bottom: 5px; }
+.feature-box p     { font-size: 12px; color: #777; }
+
+/* CONTACT */
+.contact-form { display: flex; flex-direction: column; gap: 12px; max-width: 520px; }
+
+.contact-form input,
+.contact-form textarea {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #e0e0e0;
+  padding: 11px 14px;
+  font-size: 14px;
+  border-radius: 5px;
+  outline: none;
+  font-family: Arial, sans-serif;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus { border-color: #00e5ff; }
+.contact-form textarea { resize: vertical; }
+
+.contact-form button {
+  background: #00e5ff;
+  color: #000;
+  border: none;
+  padding: 11px 26px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.contact-info { margin-top: 20px; font-size: 14px; color: #888; line-height: 2; }
+
+/* FOOTER */
+.footer {
+  background: #080808;
+  border-top: 1px solid #1e1e1e;
+  text-align: center;
+  padding: 24px;
+  color: #555;
+  font-size: 13px;
+}
+
+.footer p:first-child { color: #00e5ff; font-size: 15px; font-weight: bold; margin-bottom: 4px; }
+
+@media (max-width: 600px) {
+  .header-overlay h1 { font-size: 30px; }
+  .header-overlay input { width: 90%; }
+  .gpu-card { width: 100%; }
+  .filter-bar { flex-direction: column; align-items: flex-start; padding: 12px 20px; }
+}

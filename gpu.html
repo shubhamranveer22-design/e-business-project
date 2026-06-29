@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GPU Hub - Best Graphics Cards Online</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-overlay">
+      <h1>⚡ GPU Hub</h1>
+      <p>Best Graphics Cards from NVIDIA, AMD & Intel</p>
+      <input type="text" id="searchBox" placeholder="🔍  Search GPUs..." onkeyup="searchGPUs()" />
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#gpus">All GPUs</a>
+    <a href="#brands">Brands</a>
+    <a href="#contact">Contact</a>
+    <a href="#" class="cart-link" onclick="alert('Cart: ' + cartCount + ' item(s)')">🛒 Cart (<span id="cartCount">0</span>)</a>
+  </div>
+
+  <!-- BRANDS SECTION -->
+  <div class="section" id="brands">
+    <h2>Shop by Brand</h2>
+    <div class="brand-buttons">
+      <button class="brand-btn active" onclick="filterBrand('all', this)">All GPUs</button>
+      <button class="brand-btn nvidia" onclick="filterBrand('NVIDIA', this)">🟢 NVIDIA</button>
+      <button class="brand-btn amd" onclick="filterBrand('AMD', this)">🔴 AMD</button>
+      <button class="brand-btn intel" onclick="filterBrand('Intel', this)">🔵 Intel</button>
+    </div>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <label>Sort:</label>
+    <select id="sortSelect" onchange="sortGPUs()">
+      <option value="default">Default</option>
+      <option value="price-low">Price: Low to High</option>
+      <option value="price-high">Price: High to Low</option>
+      <option value="vram">Most VRAM</option>
+    </select>
+
+    <label style="margin-left:20px;">Category:</label>
+    <select id="categorySelect" onchange="filterCategory()">
+      <option value="all">All</option>
+      <option value="Budget">Budget</option>
+      <option value="Mid-Range">Mid-Range</option>
+      <option value="High-End">High-End</option>
+      <option value="Flagship">Flagship</option>
+    </select>
+
+    <span id="resultMsg" style="margin-left:auto;">Showing all GPUs</span>
+  </div>
+
+  <!-- GPU GRID -->
+  <div class="section" id="gpus">
+    <h2>All Graphics Cards</h2>
+    <div class="gpu-grid" id="gpuGrid"></div>
+    <p id="noResult" style="display:none; color:#aaa; text-align:center; padding:40px;">No GPUs found. Try a different search.</p>
+  </div>
+
+  <!-- COMPARISON BANNER -->
+  <div class="compare-banner">
+    <div class="compare-content">
+      <h2>🏆 Top Picks This Month</h2>
+      <div class="compare-cards">
+        <div class="compare-card">
+          <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&q=80" alt="Best Budget GPU" />
+          <h3>Best Budget</h3>
+          <p>RX 6600</p>
+          <p class="cprice">₹19,999</p>
+        </div>
+        <div class="compare-card highlight">
+          <div class="top-pick-badge">⭐ Editor's Choice</div>
+          <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&q=80" alt="Best Mid Range GPU" />
+          <h3>Best Mid-Range</h3>
+          <p>RTX 4070</p>
+          <p class="cprice">₹54,999</p>
+        </div>
+        <div class="compare-card">
+          <img src="https://images.unsplash.com/photo-1616763355548-1b606f439f86?w=400&q=80" alt="Best High End GPU" />
+          <h3>Best High-End</h3>
+          <p>RTX 4090</p>
+          <p class="cprice">₹1,59,999</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="features">
+    <div class="feature-box">
+      <div class="ficon">🚚</div>
+      <h3>Free Delivery</h3>
+      <p>On orders above ₹15,000</p>
+    </div>
+    <div class="feature-box">
+      <div class="ficon">🔄</div>
+      <h3>Easy Returns</h3>
+      <p>7 day return policy</p>
+    </div>
+    <div class="feature-box">
+      <div class="ficon">🛡️</div>
+      <h3>Warranty</h3>
+      <p>3 year manufacturer warranty</p>
+    </div>
+    <div class="feature-box">
+      <div class="ficon">💳</div>
+      <h3>EMI Options</h3>
+      <p>0% EMI on all major banks</p>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section" id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form" onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message..." rows="4"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="contact-info">
+      <p>📞 +91 98765 43210</p>
+      <p>📧 support@gpuhub.in</p>
+      <p>📍 Pune, Maharashtra, India</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>⚡ GPU Hub &nbsp;|&nbsp; Your #1 Graphics Card Store in India</p>
+    <p style="margin-top:8px; font-size:13px; color:#666;">© 2025 GPU Hub. All rights reserved.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
